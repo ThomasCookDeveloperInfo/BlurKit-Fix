@@ -363,7 +363,11 @@ public class BlurLayout extends FrameLayout {
         float dx = -crop.left * downscaleFactor;
         float dy = -crop.top * downscaleFactor;
 
-        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        mActivityView.get().setDrawingCacheEnabled(true);
+        mActivityView.get().buildDrawingCache();
+        Bitmap bitmap = mActivityView.get().getDrawingCache();
+
+        //Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Matrix matrix = new Matrix();
         matrix.preScale(downscaleFactor, downscaleFactor);
