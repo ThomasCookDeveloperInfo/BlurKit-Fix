@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.flurgle.blurkit.demo.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/peppers" />
+
+    <com.flurgle.blurkit.BlurLayout xmlns:blurkit="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/blurLayout"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        blurkit:blk_cornerRadius="150dp"
+        blurkit:blk_downscaleFactor="0.25">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="BlurKit!"
+            android:textColor="@android:color/white" />
+
+    </com.flurgle.blurkit.BlurLayout>
+
+</RelativeLayout>
