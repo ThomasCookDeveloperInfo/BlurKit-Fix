@@ -182,7 +182,7 @@ public class BlurLayout extends FrameLayout {
         // Check the reference to the parent view.
         // If not available, attempt to make it.
         if (mActivityView == null || mActivityView.get() == null) {
-            mActivityView = new WeakReference(findViewById(mViewToBlur));
+            mActivityView = new WeakReference(getActivityView().findViewById(mViewToBlur));
             if (mActivityView.get() == null) {
                 mActivityView = new WeakReference<>(getActivityView());
                 if (mActivityView.get() == null) {
