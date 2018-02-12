@@ -265,6 +265,7 @@ public class BlurLayout extends FrameLayout {
                         ),
                         mDownscaleFactor
                 );
+                mActivityView.get().setDrawingCacheEnabled(false);
             } catch (com.flurgle.blurkit.BlurKitException e) {
                 return null;
             } catch (NullPointerException e) {
@@ -366,7 +367,6 @@ public class BlurLayout extends FrameLayout {
         mActivityView.get().setDrawingCacheEnabled(true);
         mActivityView.get().buildDrawingCache();
         Bitmap bitmap = mActivityView.get().getDrawingCache();
-        mActivityView.get().setDrawingCacheEnabled(false);
 
         //Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
@@ -440,6 +440,7 @@ public class BlurLayout extends FrameLayout {
             try {
                 setAlpha(0f);
                 mLockedBitmap = getDownscaledBitmapForView(view, new Rect(0, 0, view.getWidth(), view.getHeight()), mDownscaleFactor);
+                mActivityView.get().setDrawingCacheEnabled(false);
                 setAlpha(1f);
                 mLockedBitmap = com.flurgle.blurkit.BlurKit.getInstance().blur(mLockedBitmap, mBlurRadius);
             } catch (Exception e) {
