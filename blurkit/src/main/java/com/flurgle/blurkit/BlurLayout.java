@@ -366,6 +366,7 @@ public class BlurLayout extends FrameLayout {
         mActivityView.get().setDrawingCacheEnabled(true);
         mActivityView.get().buildDrawingCache();
         Bitmap bitmap = mActivityView.get().getDrawingCache();
+        mActivityView.get().setDrawingCacheEnabled(false);
 
         //Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
