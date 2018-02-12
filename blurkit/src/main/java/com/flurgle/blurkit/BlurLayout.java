@@ -166,8 +166,6 @@ public class BlurLayout extends FrameLayout {
         Bitmap bitmap = blur();
         if (bitmap != null) {
             mImageView.setImageBitmap(bitmap);
-            mActivityView.get().setDrawingCacheEnabled(false);
-            bitmap.recycle();
         }
     }
 
